@@ -31,9 +31,7 @@ def IPv4_d2b(addr: str) -> str:
     Return:
         Returns the binary IPv4 address in a string if IPv4 address is valid, None otherwise.
     '''
-    if not isIPv4(addr): return None
-    
-    assert(isIPv4(addr)) #can't fail
+    if not isIPv4(addr): return None #can't fail
     
     bs = addr.split(".")
     bs = [int(b) for b in bs]
