@@ -1,11 +1,11 @@
+def isIPv4(addr: str) -> bool:
+#
 # Description:
 #    Checks is a given string is a valid IPv4 address.
 #
 # Return:
 #    Returns True if the address is valid, False otherwise.
 #
-def isIPv4(addr: str) -> bool:
-
     bytes = addr.split(".")
     
     if len(bytes) != 4: return False
@@ -18,7 +18,10 @@ def isIPv4(addr: str) -> bool:
            return False
            
     return True
-            
+ 
+ 
+def IPv4_d2b(addr: str) -> str:
+#          
 # Description:
 #    Converts a checked valid dotted decimal IPv4 address in
 #    dotted binary.
@@ -26,8 +29,6 @@ def isIPv4(addr: str) -> bool:
 # Return:
 #    Returns the binary IPv4 address in a string.
 #
-def IPv4_d2b(addr: str) -> str:
-
     assert(isIPv4(addr))
     
     bs = addr.split(".")
@@ -35,9 +36,10 @@ def IPv4_d2b(addr: str) -> str:
     
     return f"{bs[0]:b}.{bs[1]:b}.{bs[2]:b}.{bs[3]:b}"
  
-# Test cases:
 def tests():
-
+#
+# Test cases:
+#
     print("TEST 1/4: ", IPv4_d2b("255.255.255.255") == "11111111.11111111.11111111.11111111")
     print("TEST 2/4: ", IPv4_d2b("0.0.0.0") == "0.0.0.0")
     print("TEST 3/4: ", IPv4_d2b("0.255.255.0") == "0.11111111.11111111.0")
