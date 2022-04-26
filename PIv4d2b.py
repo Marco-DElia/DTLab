@@ -13,7 +13,7 @@ def isIPv4(addr: str) -> bool:
     for byte in bytes:
     
         if ( not byte.isnumeric() or\
-             not (int(byte) >= 0 and int(byte) <= 255) ):
+             not (0 <= int(byte) <= 255) ):
            
            return False
            
@@ -46,7 +46,7 @@ def tests():
     print("TEST 4/4: ", IPv4_d2b("111.2.123.255") == "1101111.10.1111011.11111111")
     
     
-test()
+tests()
 
 # Usage:      
 #       
