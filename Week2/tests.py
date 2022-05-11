@@ -1,4 +1,4 @@
-import IPv4d2b as ip
+import ip_funcs as ip
 
 def tests():
     '''
